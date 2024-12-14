@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>BU Bus Delay Predictor</h1>
+    <div class="route-cards">
+        <div class="card">
+            <h2>1BU Route</h2>
+            <img src="{{ url_for('static', filename='images/delays_by_stop_1BU.png') }}" alt="1BU Delays">
+            <a href="{{ url_for('main.predictions') }}?route=1BU" class="btn">View Predictions</a>
+        </div>
+        <div class="card">
+            <h2>Comm Ave Route</h2>
+            <img src="{{ url_for('static', filename='images/delays_by_stop_Comm_Ave.png') }}" alt="Comm Ave Delays">
+            <a href="{{ url_for('main.predictions') }}?route=Comm Ave" class="btn">View Predictions</a>
+        </div>
+        <div class="card">
+            <h2>Fenway Route</h2>
+            <img src="{{ url_for('static', filename='images/delays_by_stop_Fenway.png') }}" alt="Fenway Delays">
+            <a href="{{ url_for('main.predictions') }}?route=Fenway" class="btn">View Predictions</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
