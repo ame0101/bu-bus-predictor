@@ -185,6 +185,7 @@ set PYTHONMEM=4G    # On Windows
 rm -f bus_delay_model.pkl
 
 ### Directory Structure After Build
+```
 bu-bus-predictor/
 ├── app/
 │   ├── static/
@@ -207,6 +208,7 @@ bu-bus-predictor/
 ├── requirements.txt
 ├── Makefile
 └── README.md
+```
 
 ## Environment Variables
 # Create a .env file with:
