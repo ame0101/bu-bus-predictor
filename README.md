@@ -102,67 +102,67 @@ Fenway     13.31   -0.8   24.5
    - Improved tracking system
    - Better prediction algorithms
    - Enhanced user interface
-## How to Build
+# How to Build
 
-### Prerequisites
+## Prerequisites
 Python 3.10+
 pip (Python package installer)
 Git
 Make (for Makefile support)
 Virtual environment (recommended)
 
-### Step 1: Clone and Setup
-# Clone the repository
-git clone https://github.com/amevpx/bu-bus-predictor.git
-cd bu-bus-predictor
+## Step 1: Clone and Setup
+### Clone the repository
+1. git clone https://github.com/amevpx/bu-bus-predictor.git
+2. cd bu-bus-predictor
 
-# Create and activate virtual environment
+### Create and activate virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-### Step 2: Install Dependencies
-# Install all required packages
-make install
+## Step 2: Install Dependencies
+### Install all required packages
+- make install
 
-# Or manually if Make is not available:
+### Or manually if Make is not available:
 pip install -r requirements.txt
 
-### Step 3: Prepare Data Directories
-# Create necessary directories
-mkdir -p data/schedules data/zyte_data app/static/images
+## Step 3: Prepare Data Directories
+### Create necessary directories
+- mkdir -p data/schedules data/zyte_data app/static/images
 
-# Place your data files:
-# - Place schedule CSVs in data/schedules/
-# - Place JSON files in data/zyte_data/
+### Place your data files:
+- Place schedule CSVs in data/schedules/
+- Place JSON files in data/zyte_data/
 
-### Step 4: Train Model
-# Train the prediction model
-make train
+## Step 4: Train Model
+### Train the prediction model
+- make train
 
-# Or manually:
+## Or manually:
 python scripts/train_model.py
 
-### Step 5: Run Flask Application
-# Start the Flask server
-make run
+## Step 5: Run Flask Application
+### Start the Flask server
+- make run
 
-# Or manually:
-flask run
+### Or manually:
+- flask run
 
-### Common Issues and Solutions
+# Common Issues and Solutions
 
-#### Package Installation Issues
-# If you encounter SSL errors:
+## Package Installation Issues
+### If you encounter SSL errors:
 pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org <package_name>
 
-# If you need to upgrade pip:
+### If you need to upgrade pip:
 python -m pip install --upgrade pip
 
-#### Data Loading Issues
-# Ensure your CSV files follow this format:
-stop_name,scheduled_time
-"Agganis Arena","2024-12-10 08:00:00"
-"Target","2024-12-10 08:03:00"
+## Data Loading Issues
+### Ensure your CSV files follow this format:
+- stop_name,scheduled_time
+- "Agganis Arena","2024-12-10 08:00:00"
+- "Target","2024-12-10 08:03:00"
 
 # Ensure your JSON files follow this format:
 {
@@ -208,50 +208,50 @@ bu-bus-predictor/
 ├── Makefile
 └── README.md
 
-### Environment Variables
+## Environment Variables
 # Create a .env file with:
 FLASK_APP=app
 FLASK_ENV=development
 PYTHONPATH=${PYTHONPATH}:${PWD}
 
-### Development Setup
-# Install additional development dependencies
+## Development Setup
+#### Install additional development dependencies
 pip install -r requirements-dev.txt
 
-# Run tests
+### Run tests
 make test
 
-# Run linting
+### Run linting
 make lint
 
-# Clean build files
+### Clean build files
 make clean
 
 ### Production Deployment
-# Set production environment
+#### Set production environment
 export FLASK_ENV=production
 
-# Run with gunicorn
+### Run with gunicorn
 gunicorn --bind 0.0.0.0:8000 app:app
 
-# Or with waitress (Windows compatible)
+#### Or with waitress (Windows compatible)
 waitress-serve --port=8000 app:app
 
 ### Monitoring & Logs
-# View application logs
+#### View application logs
 tail -f logs/app.log
 
-# Monitor system resources
+### Monitor system resources
 top -p $(pgrep -f 'python')
 
 ### Updating
-# Pull latest changes
+#### Pull latest changes
 git pull origin main
 
-# Update dependencies
+### Update dependencies
 make update
 
-# Rebuild model
+### Rebuild model
 make train
 
 
