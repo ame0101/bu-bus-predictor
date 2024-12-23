@@ -113,7 +113,7 @@ Virtual environment (recommended)
 
 ## Step 1: Clone and Setup
 ### Clone the repository
-1. git clone https://github.com/amevpx/bu-bus-predictor.git
+1. git clone https://github.com/ame0101/bu-bus-predictor.git
 2. cd bu-bus-predictor
 
 ### Create and activate virtual environment
